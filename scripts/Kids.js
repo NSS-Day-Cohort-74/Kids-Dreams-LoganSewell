@@ -25,5 +25,3 @@ export const Kids = () => {
     html += "</ol>"
     return html
 }
-
-// 
