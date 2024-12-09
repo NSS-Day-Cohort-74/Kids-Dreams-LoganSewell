@@ -35,10 +35,13 @@ Make sure your Developer Tools are open at all times while working on this proje
 Before you click the "Complete Assessment" button on the Learning Platform, add your answers below each question and make a commit.
 
 1. When a child is clicked on in the browser, which module contains the code that will execute on that event happening? Can you explain the algorithm of that logic?
-   > Your answer here
+   > The `click` event is defined in the `kids.js` module. I used the `document.addEventListener` method to listen for click events on the HTML document. Within this event listener, I assigned the target of the click event to the `kidClicked` variable. Additionally, I created a `wish` variable to easily access the wishes stored in the database and ensured that the wishes are included as a dataset within the element.
+
+   In the previous `Kids` function, an `if` statement was added to ensure the code executes only when a child’s name is clicked, using the dataset to verify this. When a child’s name is clicked, a `window.alert` will display the message: `${kidClicked.innerText} wish is to ${wish}` for the corresponding child in the `children` array. A `break` statement is included to exit the `for...of` loop after one alert, preventing multiple pop-ups from appearing for a single click (which would otherwise happen for each child in the `children` array).
 2. In the **Pairings** module, why must the `findCelebrityMatch()` function be invoked inside the `for..of` loop that iterates the kids array?
-   > Your answer here
+   > This function should be called within a `for...of` loop because its return value is needed for each child in the `kids` array to generate the text that will appear on the website. The loop identifies which celebrity is associated with each child by passing the appropriate argument into the `findCelebrityMatch` function during each iteration.
 3. In the **CelebrityList** module, can you describe how the name of the sport that the celebrity plays can be displayed in the window alert text?
-   > Your answer here
+   > I prefer creating variables within the `clickEvent` function for any data I want to display in the `window.alert`, as long as the data comes from the same object within the same array.
 4. Can you describe, in detail, the algorithm that is in the `main` module?
-   > Your answer here
+   > The `main` module provides the portion of HTML that will be inserted into `index.html`.  
+   In the first part of `main.js`, all the necessary functions are imported to achieve the desired output. Next, a variable `mainContainer` is defined, referencing the HTML element with the ID `container`. Another variable, `applicationHTML`, is assigned to the HTML content we want to display on the page. Template literals with `${}` are used to call functions that return HTML strings to be displayed in specific sections of the page. Finally, by setting `mainContainer.innerHTML = applicationHTML`, the generated HTML content is inserted into `mainContainer` within `index.html`. "RIGHT HERE"
