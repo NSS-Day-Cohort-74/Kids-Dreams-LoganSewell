@@ -1,3 +1,6 @@
+/* This code snippet helps find a celebrity match for a given child by comparing their IDs.
+If a match is found, the details of the matched celebrity are returned; otherwise, it returns an empty object.*/
+
 import { getChildren, getCelebrities } from "./database.js"
 
 const kids = getChildren()
@@ -16,6 +19,9 @@ const findCelebrityMatch = (kidObject, celebrityArray) => {
     return celebrityDetail
 }
 
+/* This code snippet generates an HTML unordered list (<ul>) with list items (<li>) describing each kid's wish and the celebrity they'll be making memories with.
+    It dynamically builds the HTML based on the data from the kids and celebrities arrays, and the match found by the findCelebrityMatch function. */
+    
 export const Pairings = () => {
     let html = ""
     html = "<ul>"
